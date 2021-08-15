@@ -1,0 +1,184 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========
+color
+===========*/
+$base-border : #f0f4f9;
+$base-background : #f6faff;
+$base-font: #6c7686;
+$input-border : #3334;
+$primary-blue : #5C6BC0;
+$primary-red : #EC407A;
+
+/* ==========
+Button mixin
+===========*/
+@mixin base-button {
+    display: block;
+    padding: 6.5px 20px;
+    margin-left: 4px;
+    outline: none;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+body {
+    color: $base-font;
+    background-color: $base-background;
+    font-family: 'Noto Sans JP','Roboto', sans-serif;
+
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        appearance: none;
+    } 
+}
+
+
+
+.App {
+    position: relative;
+    &-inner {
+        width: 90%;
+        margin: 0 auto;
+        height: 85vh;
+        position: relative;
+    }
+
+    .modal-overlay {
+        background: rgba(0, 0, 0 , 0.5);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        &.js-modal-off {
+            display: none;
+        }
+    }
+
+
+
+    .header {
+        background: #fff;
+        padding: 30px 60px;
+        border-bottom: 1px solid $base-border;
+        &-logo {
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            font-weight: bold;
+        }
+    }
+
+    .form {
+        padding: 30px 0px;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        
+
+        .submit {
+            
+            @include base-button();
+            background: $primary-blue;
+        }
+    }
+
+    input {
+        font: 15px sans-serif;
+        box-sizing: border-box;
+        width: 360px;
+        margin: 8px 0;
+        padding: 0.3em;
+        transition: 0.3s;
+        border: 1px solid $input-border;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .list-ttl {
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+    }
+
+    .todolist {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0px;
+
+            .content {
+                font-size: 16px;
+                letter-spacing: 0.04em;
+            }
+
+            .menu {
+                display: flex;
+                align-items: center;
+
+                .editBtn {
+                    @include base-button();
+                    background: $primary-blue;
+                }
+                .deleteBtn {
+                    @include base-button();
+                    background: $primary-red;
+                }
+            }
+
+
+        }
+
+    }
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+        padding: 30px 50px;
+        background:$base-background;
+        border: solid 1px $base-border;
+        min-width: 540px;
+
+        &_inner {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .updateBtn {
+            @include base-button();
+            background: $primary-blue;
+        }
+    }
+
+
+        .none {
+            display: none;
+        }
+        .js-is-close {
+            display: none;
+        }
+
+    
+}
