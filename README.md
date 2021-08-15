@@ -4,7 +4,7 @@
 # 公開URL
 
 # App image
-
+https://kosukenemy.github.io/typescript-todoApp/
 
 ## プロジェクトイメージ
 ![project-image](https://user-images.githubusercontent.com/61720779/129480943-71b53ceb-3f31-406d-89fb-efbc71513534.png)
