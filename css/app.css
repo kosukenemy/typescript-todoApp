@@ -180,6 +180,11 @@ body button {
   background: #f6faff;
   border: solid 1px #f0f4f9;
   min-width: 540px;
+  opacity: 0;
+}
+
+.App .modal.js-is-open {
+  opacity: 1;
 }
 
 .App .modal_inner {

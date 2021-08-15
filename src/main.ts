@@ -82,7 +82,8 @@ class Todo {
                 const _target:HTMLElement = contents[index];
                 const _index:number = index;
                 const modal = document.querySelector<HTMLElement>('.modal');
-                modal.classList.remove('js-is-close')
+                modal.classList.remove('js-is-close');
+                modal.classList.add('js-is-open');
                 modalOverlay.classList.remove('js-modal-off');
                 this.editTodoModalOpen(_target , _index , modal , modalOverlay);
             })  
@@ -114,6 +115,7 @@ class Todo {
             let clear:string = "";
             editContentInput.value = clear;
             modal.classList.add('js-is-close');
+            modal.classList.remove('js-is-open');
             modalOverlay.classList.add('js-modal-off')
         })
 

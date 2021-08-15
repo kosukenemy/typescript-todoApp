@@ -159,6 +159,11 @@ body {
         background:$base-background;
         border: solid 1px $base-border;
         min-width: 540px;
+        opacity: 0;
+
+        &.js-is-open {
+            opacity: 1;
+        }
 
         &_inner {
             display: flex;
